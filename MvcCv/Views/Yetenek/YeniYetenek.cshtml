@@ -1,0 +1,49 @@
+﻿@model MvcCv.Models.Entity.TblYeteneklerim
+@{
+    ViewBag.Title = "YeniYetenek";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Yetenek Ekleme Sayfası</h3>
+                            </div>
+                            <div class="card-body">
+                                <form method="post">
+                                    <div class="form-group">
+                                        <label>Resim</label>
+                                        @Html.TextBoxFor(x => x.Resim, new { @class = "form-control" })
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Yetenek</label>
+                                        @Html.TextBoxFor(x => x.Yetenek, new { @class = "form-control" })
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Oran</label>
+                                        @Html.TextBoxFor(x => x.Oran, new { @class = "form-control" })
+                                    </div>
+
+
+                                    <div class="form-group text-end">
+                                        <button type="submit" class="btn btn-info">Yetenek Ekle</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

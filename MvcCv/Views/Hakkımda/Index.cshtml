@@ -1,0 +1,42 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblHakkimda>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Hakkımda Menüsü</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Adres</th>
+        <th>Telefon</th>
+        <th>Mail</th>
+        <th>Açıklama</th>
+        <th>Güncelle</th>
+    </tr>
+
+
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.ID</td>
+            <td>@x.Ad</td>
+            <td>@x.Soyad</td>
+            <td>@x.Adres</td>
+            <td>@x.Telefon</td>
+            <td>@x.Mail</td>
+            <td>@x.Aciklama.Substring(0, 30)...</td>
+
+
+            <td><a href="#" class="btn btn-warning">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
