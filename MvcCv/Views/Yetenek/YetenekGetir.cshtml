@@ -1,6 +1,6 @@
-﻿@model MvcCv.Models.Entity.TblDeneyimlerim
+﻿@model MvcCv.Models.Entity.TblYeteneklerim
 @{
-    ViewBag.Title = "DeneyimGetir";
+    ViewBag.Title = "YetenekGetir";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -14,24 +14,21 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Deneyim Güncelleme</h3>
+                                <h3 class="card-title">Yetenek Güncelleme</h3>
                             </div>
                             <div class="card-body">
 
                                 <form method="post">
                                     <label>ID</label>
                                     @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "True" })
-                                    <label>Başlık</label>
-                                    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+                                    <label>Resim</label>
+                                    @Html.TextBoxFor(x => x.Resim, new { @class = "form-control" })
                                     <br />
-                                    <label>Alt Başlık</label>
-                                    @Html.TextBoxFor(x => x.AltBaslik, new { @class = "form-control" })
+                                    <label>Yetenek</label>
+                                    @Html.TextBoxFor(x => x.Yetenek, new { @class = "form-control" })
                                     <br />
-                                    <label>Tarih</label>
-                                    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
-                                    <br />
-                                    <label>Açıklama</label>
-                                    @Html.TextAreaFor(x => x.Aciklama, 5, 0, new { @class = "form-control" })
+                                    <label>Oran</label>
+                                    @Html.TextBoxFor(x => x.Oran, new { @class = "form-control" })
                                     <br />
                                     <button class="btn btn-info">Güncelle</button>
 
@@ -46,3 +43,4 @@
     </div>
 </body>
 </html>
+

@@ -1,5 +1,5 @@
 ﻿@using MvcCv.Models.Entity
-@model List<TblDeneyimlerim>
+@model List<TblEgitimlerim>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -9,14 +9,13 @@
 <html>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Deneyim Listem</h3>
+                                <h3 class="card-title">Eğitim Listem</h3>
                             </div>
                             <div class="card-body">
 
@@ -25,8 +24,9 @@
                                         <tr>
                                             <th style="width: 10px">ID</th>
                                             <th>Başlık</th>
-                                            <th>Altı Başlık</th>
-                                            <th>Açıklama</th>
+                                            <th>Alt Başlık1</th>
+                                            <th>Alt Başlık2</th>
+                                            <th>Genel Not Ortalaması (GNO)</th>
                                             <th>Tarih</th>
                                             <th>Düzenle</th>
                                             <th>Sil</th>
@@ -36,22 +36,23 @@
                                     <tbody>
                                         @foreach (var x in Model)
                                         {
-                                         
+
 
                                             <tr>
                                                 <td>@x.ID</td>
                                                 <td>@x.Baslik</td>
-                                                <td>@x.AltBaslik</td>
-                                                <td>@x.Aciklama</td>
+                                                <td>@x.AltBaslik1</td>
+                                                <td>@x.AltBaslik2</td>
+                                                <td>@x.GNO</td>
                                                 <td>@x.Tarih</td>
                                                 <td style="width:150px;">
-                                                    <a class="btn btn-info btn-sm" href="/Deneyim/DeneyimGetir/@x.ID">
+                                                    <a class="btn btn-info btn-sm" href="/Egitim/EgitimGetir/@x.ID">
                                                         <i class="fas fa-pencil-alt"></i>Düzenle
                                                     </a>
                                                 </td>
 
                                                 <td style="width:100px;">
-                                                    <a class="btn btn-danger btn-sm" href="/Deneyim/DeneyimSil/@x.ID">
+                                                    <a class="btn btn-danger btn-sm" href="/Egitim/EgitimSil/@x.ID">
                                                         <i class="fas fa-trash"></i>Sil
                                                     </a>
                                                 </td>
@@ -62,7 +63,7 @@
 
                                 </table>
                                 <br />
-                                <a href="/Deneyim/DeneyimEkle/" class="btn btn-info">Yeni Deneyim Ekle</a>
+                                <a href="/Egitim/EgitimEkle/" class="btn btn-info">Yeni Eğitim Ekle</a>
                             </div>
                         </div>
                     </div>
@@ -72,3 +73,4 @@
     </div>
 </body>
 </html>
+
