@@ -14,7 +14,6 @@ namespace MvcCv.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Foto=db.TblHakkimda.Select(x=>x.Resim).FirstOrDefault();
             var degerler = db.TblHakkimda.ToList();
             return View(degerler);
         }
