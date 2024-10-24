@@ -1,0 +1,42 @@
+﻿@model MvcCv.Models.Entity.TblSertifikalarim
+@{
+    ViewBag.Title = "SertifikaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Sertifika Güncelleme</h3>
+                            </div>
+                            <div class="card-body">
+
+                                <form method="post">
+                                    <label>ID</label>
+                                    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "True" })
+                                    <label>Açıklama</label>
+                                    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+                                    <br />
+                                    <label>Tarih</label>
+                                    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+                                    <br />
+                                    <button class="btn btn-info">Güncelle</button>
+                                    <a class="btn btn-danger" href="/Sertifika/SertifikaSil/@ViewBag.Sil">Sil</a>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
