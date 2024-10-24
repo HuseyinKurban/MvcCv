@@ -1,0 +1,52 @@
+﻿@model MvcCv.Models.Entity.TblSosyalMedya
+@{
+    ViewBag.Title = "SosyalMedyaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Deneyim Güncelleme</h3>
+                            </div>
+                            <div class="card-body">
+
+                                <form method="post">
+                                    <label>ID</label>
+                                    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "True" })
+                                    <label>Sosyal Medya Adı</label>
+                                    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+                                    <br />
+                                    <label>Sosyal Medya Iconu</label>
+                                    @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
+                                    <br />
+                                    <label>Sosyal Medya Linki</label>
+                                    @Html.TextBoxFor(x => x.Link, new { @class = "form-control" })
+                                    <br />
+                                    <label>Durum</label>
+                                    @Html.DropDownListFor(x => x.Durum, new List<SelectListItem>
+        {
+            new SelectListItem { Text = "Aktif", Value = "true" },
+            new SelectListItem { Text = "Pasif", Value = "false" }
+        }, new { @class = "form-control" })
+                                    <br />
+                                    <button class="btn btn-info">Güncelle</button>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -13,6 +13,7 @@
         <EntityTypeShape EntityType="DbCvModel.Tbliletisim" Width="1.5" PointX="10.625" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TblSertifikalarim" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbCvModel.TblYeteneklerim" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbCvModel.TblSosyalMedya" Width="1.5" PointX="0.75" PointY="2.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
