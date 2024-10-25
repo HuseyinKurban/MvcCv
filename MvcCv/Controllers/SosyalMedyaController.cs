@@ -12,6 +12,7 @@ namespace MvcCv.Controllers
     {
         // GET: SosyalMedya
         GenericRepository<TblSosyalMedya> repo = new GenericRepository<TblSosyalMedya>();
+      
         public ActionResult Index()
         {
             var deger = repo.List();
@@ -44,6 +45,13 @@ namespace MvcCv.Controllers
             deger.Link = p.Link;
             deger.Durum = p.Durum;
             repo.TUpdate(deger);
+            return RedirectToAction("Index");
+        }
+        public ActionResult SosyalMedyaSil(int id)
+        {
+            var hesap = repo.Find(x => x.ID == id);
+            hesap.Durum = false;
+            repo.TUpdate(hesap);
             return RedirectToAction("Index");
         }
 

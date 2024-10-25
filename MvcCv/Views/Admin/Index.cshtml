@@ -1,8 +1,70 @@
-﻿
+﻿@using MvcCv.Models.Entity
+@model List<TblAdmin>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Admin İşlemleri</h3>
+                            </div>
+                            <div class="card-body">
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">ID</th>
+                                            <th>Kullanıcı Adı</th>
+                                            <th>Düzenle</th>
+                                            <th>Sil</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var x in Model)
+                                        {
+
+
+                                            <tr>
+                                                <td>@x.ID</td>
+                                                <td>@x.KullaniciAdi</td>
+
+                                                <td style="width:150px;">
+                                                    <a class="btn btn-info btn-sm" href="/Admin/AdminGetir/@x.ID">
+                                                        <i class="fas fa-pencil-alt"></i>Düzenle
+                                                    </a>
+                                                </td>
+
+                                                <td style="width:100px;">
+                                                    <a class="btn btn-danger btn-sm" href="/Admin/AdminSil/@x.ID">
+                                                        <i class="fas fa-trash"></i>Sil
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+
+                                </table>
+                                <br />
+                                <a href="/Admin/AdminEkle" class="btn btn-info">Yeni Kullanıcı Ekle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
 
